@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фильтрация книг по цене</title>
+  <style>
+
+  </style>
+</head>
+<body>
+
+  <script>
+    function getBooksList(books) {
+      return books.filter(book => book.price < 400);
+    }
+    const books = [
+        { title: "Книга 1", price: 300 },
+        { title: "Книга 2", price: 500 },
+        { title: "Книга 3", price: 250 },
+        { title: "Книга 4", price: 450 },
+        { title: "Книга 5", price: 150 },
+        { title: "Книга 6", price: 800 }
+    ];
+    console.log(getBooksList(books))
+  </script>
+
+</body>
+</html>

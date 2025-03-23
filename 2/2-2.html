@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймер акции</title>
+    <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer"></div>
+
+    <script>
+        let timeLeft = 5;
+
+        const timerElement = document.querySelector('#timer');
+
+        const countdown = setInterval(() => {
+            let mins = Math.floor(timeLeft / 60);
+            let secs = timeLeft % 60;
+
+            mins = mins < 10 ? '0' + mins : mins;
+            secs = secs < 10 ? '0' + secs : secs;
+
+            timerElement.textContent = `${mins}:${secs}`;
+            console.log(`${mins}:${secs}`);
+
+            timeLeft--;
+
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                console.log("Акция завершена!");
+                timerElement.textContent = "Акция завершена!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

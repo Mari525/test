@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление книги в корзину</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 100px;
+      }
+      button {
+        margin-bottom: 30px;
+        padding: 10px 100px;
+      }
+    </style>
+</head>
+<body>
+
+    <button id="add-btn">Добавить в корзину</button>    
+    <ul id="books-list"></ul>
+
+    <script>
+      const addBtn = document.querySelector("#add-btn")
+      const booksList = document.querySelector("#books-list")
+      let bookCount = 0;
+
+      addBtn.addEventListener('click', () => {
+        bookCount++;
+        const newBook = document.createElement('li');
+        newBook.textContent = `Книга ${bookCount}`;
+        booksList.appendChild(newBook);
+      });
+    </script>
+
+</body>
+</html>
